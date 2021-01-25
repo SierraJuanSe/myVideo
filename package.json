@@ -1,0 +1,18 @@
+{
+  "name": "myvideo",
+  "version": "1.0.0",
+  "description": "Web app for videos",
+  "license": "MIT",
+  "author": "Juan Sebastian Sierra <juansebastiansierrac@gmail.com>",
+  "keywords": [
+    "platzi",
+    "mediaplayer",
+    "videos"
+  ],
+  "scripts": {
+    "start": "live-server"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
