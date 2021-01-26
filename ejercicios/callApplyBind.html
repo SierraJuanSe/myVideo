@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callApplyBind</title>
+</head>
+
+<body>
+    <a href="/ejercicios/">Go Back</a>
+    <p><em>Abre la consola</em></p>
+
+    <p><code>This</code> es un objeto</p>
+    <script>
+        // establece this usando call
+
+        function saludar() {
+            console.log(`Hola soy ${this.name} ${this.apellido}`);
+        }
+
+        const richard = {
+            name: 'Richard',
+            apellido: 'Kaufman'
+        }
+
+        saludar.call(richard)
+
+        // establece this usando call y pasar argumetnos a la funcion
+        function caminar(metros, direccion) {
+            console.log(`${this.name} camina ${metros} metros hacia el ${direccion}`);
+        }
+
+        caminar.call(richard, 400, 'norte')
+
+        // establece this usando apply y pasar argumetnos a la funcion
+        caminar.apply(richard, [300, 'sur'])
+
+        // establece this usando bind y pasar argumetnos a la funcion
+        const daniel = {
+            name: 'Daniel',
+            apellido: 'Sanchez'
+        }
+        const danielSaluda = saludar.bind(daniel)
+        danielSaluda()
+
+        const danielCamina = caminar.bind(daniel, 100)
+        danielCamina('oeste')
+        // cuando es mas util usar estos metodos
+    </script>
+</body>
+
+</html>
